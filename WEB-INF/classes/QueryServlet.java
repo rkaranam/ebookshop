@@ -20,12 +20,17 @@ public class QueryServlet extends HttpServlet{
 
 		try {
 
+			// loads the mysql Driver class into memory
+			Class.forName("com.mysql.jdbc.Driver");
+
 			connection = DriverManager.getConnection(
 				"jdbc:mysql://localhost:3306/ebookshop", "root", "mysql");
 
 			System.out.println("MySQL Connection Successful!");
 
 		} catch(SQLException ex) {
+			ex.printStackTrace();
+		} catch(ClassNotFoundException ex) {
 			ex.printStackTrace();
 		} finally {
 			out.close();
