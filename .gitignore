@@ -1,0 +1,12 @@
+# Created by https://www.gitignore.io/api/java
+
+### Java ###
+*.class
+
+# Property Files #
+*.properties
+
+# Package Files #
+*.jar
+*.war
+*.ear
