@@ -5,6 +5,8 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     metadata-complete="true">
 
+    <context reloadable="true"/>
+
     <!-- Save this file as ebookshop\WEB-INF\web.xml -->
     <servlet>
     	<servlet-name>eBookShopQuery</servlet-name>
