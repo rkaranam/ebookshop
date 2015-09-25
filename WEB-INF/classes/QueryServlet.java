@@ -36,17 +36,29 @@ public class QueryServlet extends HttpServlet{
 
 			System.out.println("MySQL Connection Successful!");
 
-		} catch(SQLException ex) {
-			System.out.println("********** SQL Exception Occured ***********");
-			ex.printStackTrace();
-		} catch(ClassNotFoundException ex) {
-			System.out.println("********** Class Not Found Exception Occured ***********");
-			ex.printStackTrace();
-		} catch(IOException ex) {
-			System.out.println("********** IO Exception Occured ***********");
-			ex.printStackTrace();
+			statement = connection.createStatement();
+
+			String queryString = "Select * from books where author = '" + request.getParameter("author") + "'";
+
+			out.println("<html><head><title>Query Results</title></head><body>");
+			out.println("<h2>Thank you for your query.</h2>");
+			out.println("<p>Your query is <b>" + queryString + "</b></p>");
+
+			ResultSet rs = statement.executeQuery(queryString);
+
+			int count = 0;
+			while(rs.next()){
+				out.println("<p>Title: " + rs.getString("title") +
+							", Author: " + rs.getString("author") +
+							", Price: $" + rs.getDouble("price") + "</p>");
+				count++;
+			}
+
+			out.println("<p>" + count + " records found.</p>");
+			out.println("</body></html>");
+
 		} catch(Exception ex) {
-			System.out.println("********** Exception Occured ***********");
+			System.out.println("********** Exception Occured ************");
 			ex.printStackTrace();
 		} finally {
 			out.close();
