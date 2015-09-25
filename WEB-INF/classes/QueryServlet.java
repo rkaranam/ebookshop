@@ -4,7 +4,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import java.util.Properties;
+import javax.servlet.annotation.*;
 
+@WebServlet(value = "/query")
 public class QueryServlet extends HttpServlet{
 
 	@Override
