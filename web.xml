@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    metadata-complete="true">
+
+    <context reloadable="true"/>
+
+    <!-- Save this file as ebookshop\WEB-INF\web.xml -->
+    <servlet>
+    	<servlet-name>eBookShopQuery</servlet-name>
+    	<servlet-class>QueryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eshopQueryServlet</servlet-name>
+        <servlet-class>EshopQueryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eshopOrderServlet</servlet-name>
+        <servlet-class>EshopOrderServlet</servlet-class>
+    </servlet>
+
+    <!-- All <servlet> elements must be placed in front of <servlet-mapping> elements -->
+    <servlet-mapping>
+    	<servlet-name>eBookShopQuery</servlet-name>
+    	<url-pattern>/query</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eshopQueryServlet</servlet-name>
+        <url-pattern>/eshopquery</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eshopOrderServlet</servlet-name>
+        <url-pattern>/eshoporder</url-pattern>
+    </servlet-mapping>
+
+</web-app>
