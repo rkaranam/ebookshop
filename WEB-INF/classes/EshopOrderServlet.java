@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.*;
 
-@WebServlet(value = "/eshoporder2")
+@WebServlet(value = "/eshoporder")
 public class EshopOrderServlet extends HttpServlet{
 
 	@Override

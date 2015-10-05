@@ -66,8 +66,8 @@ public class EshopQueryServlet extends HttpServlet{
 
 			// out.println("<p>" + count + " records found.</p>");
 
-			out.println("</form>");
 			out.println("<p><input type='submit' value='Order'/></p>");
+			out.println("</form>");
 			out.println("</body></html>");
 
 		} catch(Exception ex) {
